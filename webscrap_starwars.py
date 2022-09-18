@@ -20,5 +20,19 @@ body = response.text[:2000]
 # use of Beautfil Soup to identify the HTML tags for desired infor
 # info = quotes and characters for the quotes
 soup  = BeautifulSoup(response.text, 'html.parser')
-quotes = soup.findAll('strong') # find the html strong tag
-print(quotes)
+quotes = soup.findAll('strong') # find the html strong tag, put it in the variable, quotes
+# print(quotes) # what is in the quotes variable?? Let's look... This will be commented out after we add BeautilSoup
+
+# Let's clean the data collected, too many <strong></strong> tags!
+# This will remove the html tags leaving just plain text - which is what we want!
+for quote in quotes:
+    text_only_quote = quote.text #new variable to hold the text
+    # print(text_only_quote) //TEST
+    file.write(text_only_quote + '\n')
+
+# Wow, such clean!! 
+
+# add a way to export the quotes/data for use!
+# add \|/ before the for loop to write the data to a local file
+# with open('star_wars_html', 'w') as file:
+#   file.write(text_only_quote + '\n' )
