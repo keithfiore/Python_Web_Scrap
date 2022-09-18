@@ -5,6 +5,9 @@ import requests
 # You need to use an html parser - so BeautifulSoup is introduced
 from bs4 import BeautifulSoup
 
+# Make use of comma separated value feature
+import csv
+
 # get html from site
 url = 'https://www.starwars.com/news/15-star-wars-quotes-to-use-in-everyday-life'
 response = requests.get(url)
@@ -25,10 +28,10 @@ quotes = soup.findAll('strong') # find the html strong tag, put it in the variab
 
 # Let's clean the data collected, too many <strong></strong> tags!
 # This will remove the html tags leaving just plain text - which is what we want!
-for quote in quotes:
-    text_only_quote = quote.text #new variable to hold the text
-    # print(text_only_quote) //TEST
-    file.write(text_only_quote + '\n')
+# for quote in quotes:
+#    text_only_quote = quote.text #new variable to hold the text
+#    # print(text_only_quote) //TEST - commented out after adding write
+#   file.write(text_only_quote + '\n')
 
 # Wow, such clean!! 
 
@@ -36,3 +39,18 @@ for quote in quotes:
 # add \|/ before the for loop to write the data to a local file
 # with open('star_wars_html', 'w') as file:
 #   file.write(text_only_quote + '\n' )
+with open('star_wars', 'w') as file:
+    for quote in quotes:
+        text_only_quote = quote.text #new variable to hold the text
+        # print(text_only_quote) //TEST - commented out after adding write
+        file.write(text_only_quote + '\n')
+
+with open('star_wars_quotes.csv', 'w') as csv_file:
+    for quote in quotes:
+        writer = csv.writer(csv_file)
+        column_headings = ('QUOTE')
+        writer.writerow(column_headings) 
+        
+        for quote in quotes:
+            text_only_quote = quote.text.strip()
+            writer.writerow([text_only_quote + '\n'])
