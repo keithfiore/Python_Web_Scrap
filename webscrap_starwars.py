@@ -54,3 +54,4 @@ with open('star_wars_quotes.csv', 'w') as csv_file:
         for quote in quotes:
             text_only_quote = quote.text.strip()
             writer.writerow([text_only_quote + '\n'])
+
