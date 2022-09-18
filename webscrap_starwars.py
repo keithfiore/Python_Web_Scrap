@@ -58,11 +58,11 @@ with open('star_wars', 'w') as file:
 
 
 
-# Yuck spaces and gaps ... let's clean some more :)
+# Yuck spaces and gaps ... let's clean some more 
 # Great Reading Material About This! https://webautomation.io/blog/how-to-clean-web-scraping-data-using-python-beautifulsoup/
 
 # You need to review this to be successful: https://docs.python.org/3.12/library/csv.html
-with open('star_wars_quotes.csv', 'w') as csv_file:
+with open('star_wars.csv', 'w') as csv_file:
     for quote in quotes:
         text_only_quote = quote.text.strip()
         writer = csv.writer(csv_file)
