@@ -55,3 +55,5 @@ with open('star_wars_quotes.csv', 'w') as csv_file:
             text_only_quote = quote.text.strip()
             writer.writerow([text_only_quote + '\n'])
 
+# Yuck spaces and gaps ... let's clean some more :)
+# Great Reading Material About This! https://webautomation.io/blog/how-to-clean-web-scraping-data-using-python-beautifulsoup/

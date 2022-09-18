@@ -3,3 +3,5 @@ Web Scrap: To collect and parse raw data from the web with the use of Python. Py
 With the use of the HTTP Library, requests (https://pypi.org/project/requests/) and the Beautiful Soup library (https://beautiful-soup-4.readthedocs.io/en/latest/) this task is a BREEZE!  
 
 You may be asking, what is Beautiful Soup? Beautiful Soup is a Python library for pulling data out of HTML and XML files. With the use of Beautiful Soup not only will you be able to retrieve the data you want, but also clean the data as well!
+
+Another good resource besides Python and Beautiful Soups documentation is: https://webautomation.io/blog/how-to-clean-web-scraping-data-using-python-beautifulsoup/  Read more about how to clean up web scrapped html to your expectations. I am referencing so I am using. 
